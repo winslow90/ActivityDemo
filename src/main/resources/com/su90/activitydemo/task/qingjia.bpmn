@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<bpmn:definitions targetNamespace="http://www.activiti.org/test" expressionLanguage="http://www.w3.org/1999/XPath" typeLanguage="http://www.w3.org/2001/XMLSchema" exporter="jBPMN NB" exporterVersion="0.3" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL http://www.omg.org/spec/BPMN/2.0/20100501/BPMN20.xsd" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:jbpmn="http://jbpmn.java.net" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <bpmn:process isClosed="false" name="qingjia1" id="qingjia1">
+<bpmn:definitions targetNamespace="http://www.activiti.org/test" expressionLanguage="http://www.w3.org/1999/XPath" typeLanguage="http://www.w3.org/2001/XMLSchema" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL http://www.omg.org/spec/BPMN/2.0/20100501/BPMN20.xsd" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:jbpmn="http://jbpmn.java.net" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <bpmn:process isClosed="false" name="qingjia" id="qingjia">
         <bpmn:startEvent isInterrupting="true" parallelMultiple="false" name="Start" id="startevent1">
             <bpmn:extensionElements>
                 <jbpmn:ShapeDesign>{"outer":{"background":{"startColor":"RGB(255,255,255)","endColor":"RGB(226,232,236)"},"border":{"color":"RGB(108,142,183)","width":1.0}},"inner":{"background":{"startColor":"RGB(255,255,255)","endColor":"RGB(255,248,159)"},"border":{"color":"RGB(30,69,123)","width":1.0}}}</jbpmn:ShapeDesign>
@@ -13,21 +13,21 @@
             </bpmn:extensionElements>
             <bpmn:incoming>flow4</bpmn:incoming>
         </bpmn:endEvent>
-        <bpmn:userTask implementation="##unspecified" isForCompensation="false" startQuantity="1" completionQuantity="1" name="请假申请" id="请假申请">
+        <bpmn:userTask implementation="##unspecified" isForCompensation="false" startQuantity="1" completionQuantity="1" name="请假申请" id="请假申请" activiti:assignee="#{userId}" xmlns:activiti="http://activiti.org/bpmn">
             <bpmn:extensionElements>
                 <jbpmn:ShapeDesign>{"outer":{"background":{"startColor":"RGB(255,255,255)","endColor":"RGB(226,232,236)"},"border":{"color":"RGB(108,142,183)","width":2.5}},"inner":{"background":{"startColor":"RGB(255,255,255)","endColor":"RGB(255,248,159)"},"border":{"color":"RGB(30,69,123)","width":1.0}}}</jbpmn:ShapeDesign>
             </bpmn:extensionElements>
             <bpmn:incoming>flow1</bpmn:incoming>
             <bpmn:outgoing>flow2</bpmn:outgoing>
         </bpmn:userTask>
-        <bpmn:userTask implementation="##unspecified" isForCompensation="false" startQuantity="1" completionQuantity="1" name="部门经理审批" id="部门经理审批" activiti:assignee="范冰冰的经纪人" xmlns:activiti="http://activiti.org/bpmn">
+        <bpmn:userTask implementation="##unspecified" isForCompensation="false" startQuantity="1" completionQuantity="1" name="部门经理审批" id="部门经理审批" activiti:assignee="#{manager}" xmlns:activiti="http://activiti.org/bpmn">
             <bpmn:extensionElements>
                 <jbpmn:ShapeDesign>{"outer":{"background":{"startColor":"RGB(255,255,255)","endColor":"RGB(226,232,236)"},"border":{"color":"RGB(108,142,183)","width":2.5}},"inner":{"background":{"startColor":"RGB(255,255,255)","endColor":"RGB(255,248,159)"},"border":{"color":"RGB(30,69,123)","width":1.0}}}</jbpmn:ShapeDesign>
             </bpmn:extensionElements>
             <bpmn:incoming>flow2</bpmn:incoming>
             <bpmn:outgoing>flow3</bpmn:outgoing>
         </bpmn:userTask>
-        <bpmn:userTask implementation="##unspecified" isForCompensation="false" startQuantity="1" completionQuantity="1" name="总经理审批" id="总经理审批" activiti:assignee="王中军" xmlns:activiti="http://activiti.org/bpmn">
+        <bpmn:userTask implementation="##unspecified" isForCompensation="false" startQuantity="1" completionQuantity="1" name="总经理审批" id="总经理审批" activiti:assignee="#{boss}" xmlns:activiti="http://activiti.org/bpmn">
             <bpmn:extensionElements>
                 <jbpmn:ShapeDesign>{"outer":{"background":{"startColor":"RGB(255,255,255)","endColor":"RGB(226,232,236)"},"border":{"color":"RGB(108,142,183)","width":2.5}},"inner":{"background":{"startColor":"RGB(255,255,255)","endColor":"RGB(255,248,159)"},"border":{"color":"RGB(30,69,123)","width":1.0}}}</jbpmn:ShapeDesign>
             </bpmn:extensionElements>
@@ -39,53 +39,53 @@
         <bpmn:sequenceFlow sourceRef="部门经理审批" targetRef="总经理审批" id="flow3"/>
         <bpmn:sequenceFlow sourceRef="总经理审批" targetRef="endevent1" id="flow4"/>
     </bpmn:process>
-    <bpmndi:BPMNDiagram id="_14550271892737">
-        <bpmndi:BPMNPlane id="_14550271892738">
+    <bpmndi:BPMNDiagram id="_145503043295714">
+        <bpmndi:BPMNPlane id="_145503043295715">
             <bpmndi:BPMNShape bpmnElement="startevent1" id="startevent1_gui">
-                <omgdc:Bounds x="475.0" y="40.0" width="35.0" height="35.0"/>
+                <omgdc:Bounds x="435.0" y="40.0" width="35.0" height="35.0"/>
                 <bpmndi:BPMNLabel>
-                    <omgdc:Bounds x="476.0" y="80.0" width="31.0" height="15.0"/>
+                    <omgdc:Bounds x="436.0" y="80.0" width="31.0" height="15.0"/>
                 </bpmndi:BPMNLabel>
             </bpmndi:BPMNShape>
             <bpmndi:BPMNShape bpmnElement="endevent1" id="endevent1_gui">
-                <omgdc:Bounds x="470.0" y="400.0" width="35.0" height="35.0"/>
+                <omgdc:Bounds x="435.0" y="420.0" width="35.0" height="35.0"/>
                 <bpmndi:BPMNLabel>
-                    <omgdc:Bounds x="473.0" y="439.0" width="26.0" height="17.0"/>
+                    <omgdc:Bounds x="438.0" y="459.0" width="26.0" height="17.0"/>
                 </bpmndi:BPMNLabel>
             </bpmndi:BPMNShape>
             <bpmndi:BPMNShape bpmnElement="请假申请" id="请假申请_gui">
-                <omgdc:Bounds x="440.0" y="110.0" width="105.0" height="55.0"/>
+                <omgdc:Bounds x="400.0" y="110.0" width="105.0" height="55.0"/>
                 <bpmndi:BPMNLabel>
-                    <omgdc:Bounds x="467.0" y="170.0" width="48.0" height="15.0"/>
+                    <omgdc:Bounds x="427.0" y="170.0" width="48.0" height="15.0"/>
                 </bpmndi:BPMNLabel>
             </bpmndi:BPMNShape>
             <bpmndi:BPMNShape bpmnElement="部门经理审批" id="部门经理审批_gui">
-                <omgdc:Bounds x="440.0" y="200.0" width="105.0" height="55.0"/>
+                <omgdc:Bounds x="400.0" y="200.0" width="105.0" height="55.0"/>
                 <bpmndi:BPMNLabel>
-                    <omgdc:Bounds x="455.0" y="260.0" width="72.0" height="15.0"/>
+                    <omgdc:Bounds x="415.0" y="260.0" width="72.0" height="15.0"/>
                 </bpmndi:BPMNLabel>
             </bpmndi:BPMNShape>
             <bpmndi:BPMNShape bpmnElement="总经理审批" id="总经理审批_gui">
-                <omgdc:Bounds x="440.0" y="300.0" width="105.0" height="55.0"/>
+                <omgdc:Bounds x="400.0" y="320.0" width="105.0" height="55.0"/>
                 <bpmndi:BPMNLabel>
-                    <omgdc:Bounds x="461.0" y="360.0" width="60.0" height="15.0"/>
+                    <omgdc:Bounds x="420.0" y="379.0" width="62.0" height="17.0"/>
                 </bpmndi:BPMNLabel>
             </bpmndi:BPMNShape>
             <bpmndi:BPMNEdge bpmnElement="flow1" id="flow1_gui">
-                <omgdi:waypoint x="492.0" y="74.0"/>
-                <omgdi:waypoint x="492.0" y="110.0"/>
+                <omgdi:waypoint x="452.0" y="74.0"/>
+                <omgdi:waypoint x="452.0" y="110.0"/>
             </bpmndi:BPMNEdge>
             <bpmndi:BPMNEdge bpmnElement="flow2" id="flow2_gui">
-                <omgdi:waypoint x="492.0" y="164.0"/>
-                <omgdi:waypoint x="492.0" y="198.0"/>
+                <omgdi:waypoint x="452.0" y="164.0"/>
+                <omgdi:waypoint x="452.0" y="198.0"/>
             </bpmndi:BPMNEdge>
             <bpmndi:BPMNEdge bpmnElement="flow3" id="flow3_gui">
-                <omgdi:waypoint x="492.0" y="254.0"/>
-                <omgdi:waypoint x="492.0" y="298.0"/>
+                <omgdi:waypoint x="452.0" y="254.0"/>
+                <omgdi:waypoint x="452.0" y="318.0"/>
             </bpmndi:BPMNEdge>
             <bpmndi:BPMNEdge bpmnElement="flow4" id="flow4_gui">
-                <omgdi:waypoint x="490.0" y="354.0"/>
-                <omgdi:waypoint x="490.0" y="401.0"/>
+                <omgdi:waypoint x="452.0" y="375.0"/>
+                <omgdi:waypoint x="452.0" y="420.0"/>
             </bpmndi:BPMNEdge>
         </bpmndi:BPMNPlane>
     </bpmndi:BPMNDiagram>
