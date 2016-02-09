@@ -43,7 +43,7 @@ public class Task2Test {
 		ProcessEngine processEngine = ProcessEngines.getDefaultProcessEngine();
 		processEngine.getRepositoryService()
 		.createDeployment()
-		.addClasspathResource("com/itheima11/activiti/task/qingjia2.bpmn")
+		.addClasspathResource("com/su90/activitydemo/task/qingjia2.bpmn")
 		.deploy();
 	}
 	
@@ -66,7 +66,7 @@ public class Task2Test {
 		variables.put("aaa", "aaa");
 		ProcessEngine processEngine = ProcessEngines.getDefaultProcessEngine();
 		processEngine.getRuntimeService()
-		.startProcessInstanceById("qingjia2:1:2104",variables);
+		.startProcessInstanceById("qingjia2:1:1104",variables);
 	}
 	
 	/**

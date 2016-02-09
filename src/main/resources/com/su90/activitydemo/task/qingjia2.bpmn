@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<bpmn:definitions targetNamespace="http://www.activiti.org/test" expressionLanguage="http://www.w3.org/1999/XPath" typeLanguage="http://www.w3.org/2001/XMLSchema" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL http://www.omg.org/spec/BPMN/2.0/20100501/BPMN20.xsd" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:jbpmn="http://jbpmn.java.net" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<bpmn:definitions targetNamespace="http://www.activiti.org/test" expressionLanguage="http://www.w3.org/1999/XPath" typeLanguage="http://www.w3.org/2001/XMLSchema" exporter="jBPMN NB" exporterVersion="0.3" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL http://www.omg.org/spec/BPMN/2.0/20100501/BPMN20.xsd" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:jbpmn="http://jbpmn.java.net" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <bpmn:process isClosed="false" name="qingjia2" id="qingjia2">
         <bpmn:startEvent isInterrupting="true" parallelMultiple="false" name="Start" id="startevent1">
             <bpmn:extensionElements>
@@ -51,7 +51,7 @@
             <bpmndi:BPMNShape bpmnElement="endevent1" id="endevent1_gui">
                 <omgdc:Bounds x="440.0" y="440.0" width="35.0" height="35.0"/>
                 <bpmndi:BPMNLabel>
-                    <omgdc:Bounds x="443.0" y="479.0" width="26.0" height="17.0"/>
+                    <omgdc:Bounds x="444.0" y="480.0" width="24.0" height="15.0"/>
                 </bpmndi:BPMNLabel>
             </bpmndi:BPMNShape>
             <bpmndi:BPMNShape bpmnElement="请假申请" id="请假申请_gui">
@@ -61,31 +61,31 @@
                 </bpmndi:BPMNLabel>
             </bpmndi:BPMNShape>
             <bpmndi:BPMNShape bpmnElement="部门经理审批" id="部门经理审批_gui">
-                <omgdc:Bounds x="405.0" y="226.0" width="105.0" height="55.0"/>
+                <omgdc:Bounds x="405.0" y="225.0" width="105.0" height="55.0"/>
                 <bpmndi:BPMNLabel>
-                    <omgdc:Bounds x="420.0" y="286.0" width="72.0" height="15.0"/>
+                    <omgdc:Bounds x="420.0" y="285.0" width="72.0" height="15.0"/>
                 </bpmndi:BPMNLabel>
             </bpmndi:BPMNShape>
             <bpmndi:BPMNShape bpmnElement="总经理审批" id="总经理审批_gui">
                 <omgdc:Bounds x="405.0" y="340.0" width="105.0" height="55.0"/>
                 <bpmndi:BPMNLabel>
-                    <omgdc:Bounds x="425.0" y="399.0" width="62.0" height="17.0"/>
+                    <omgdc:Bounds x="426.0" y="400.0" width="60.0" height="15.0"/>
                 </bpmndi:BPMNLabel>
             </bpmndi:BPMNShape>
             <bpmndi:BPMNEdge bpmnElement="flow1" id="flow1_gui">
                 <omgdi:waypoint x="466.0" y="73.0"/>
-                <omgdi:waypoint x="466.0" y="120.0"/>
+                <omgdi:waypoint x="466.0" y="121.0"/>
             </bpmndi:BPMNEdge>
             <bpmndi:BPMNEdge bpmnElement="flow2" id="flow2_gui">
-                <omgdi:waypoint x="457.0" y="174.0"/>
-                <omgdi:waypoint x="457.0" y="224.0"/>
+                <omgdi:waypoint x="457.0" y="175.0"/>
+                <omgdi:waypoint x="457.0" y="223.0"/>
             </bpmndi:BPMNEdge>
             <bpmndi:BPMNEdge bpmnElement="flow3" id="flow3_gui">
-                <omgdi:waypoint x="457.0" y="281.0"/>
-                <omgdi:waypoint x="457.0" y="340.0"/>
+                <omgdi:waypoint x="457.0" y="279.0"/>
+                <omgdi:waypoint x="457.0" y="338.0"/>
             </bpmndi:BPMNEdge>
             <bpmndi:BPMNEdge bpmnElement="flow4" id="flow4_gui">
-                <omgdi:waypoint x="457.0" y="395.0"/>
+                <omgdi:waypoint x="457.0" y="392.0"/>
                 <omgdi:waypoint x="457.0" y="440.0"/>
             </bpmndi:BPMNEdge>
         </bpmndi:BPMNPlane>

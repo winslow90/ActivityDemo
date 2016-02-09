@@ -22,6 +22,7 @@ public class MyTaskListener implements TaskListener{
 		 * 任务的执行人可以动态的赋值
 		 *   1、流程变量
 		 *        可以通过提取流程变量的方式给任务赋值执行人
+                 *          在创建流程时添加 com.su90.activitydemo.task.Task2Test::testStartPI();
 		 *   2、可以操作数据库
 		 *       WebApplicationContext ac = WebApplicationContextUtils
 		 *       	.getWebApplicationContext(ServletActionContext.getServletContext());
